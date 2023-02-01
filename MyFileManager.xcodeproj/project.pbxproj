@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D832C26D2989B71D0032E811 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = D832C26C2989B71D0032E811 /* KeychainAccess */; };
+		D832C26F298AB11F0032E811 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D832C26E298AB11F0032E811 /* Settings.swift */; };
 		D8F6F13C296C73110021CE3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F13B296C73110021CE3C /* AppDelegate.swift */; };
 		D8F6F13E296C73110021CE3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F13D296C73110021CE3C /* SceneDelegate.swift */; };
 		D8F6F145296C73160021CE3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F6F144296C73160021CE3C /* Assets.xcassets */; };
 		D8F6F150296C73770021CE3C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F14F296C73770021CE3C /* FileManager.swift */; };
+		D8F6F152296EC94C0021CE3C /* PasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F6F151296EC94C0021CE3C /* PasswordScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D832C26E298AB11F0032E811 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		D8F6F138296C73110021CE3C /* MyFileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFileManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F6F13B296C73110021CE3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8F6F13D296C73110021CE3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D8F6F144296C73160021CE3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F6F149296C73160021CE3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8F6F14F296C73770021CE3C /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		D8F6F151296EC94C0021CE3C /* PasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D832C26D2989B71D0032E811 /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,8 @@
 				D8F6F144296C73160021CE3C /* Assets.xcassets */,
 				D8F6F149296C73160021CE3C /* Info.plist */,
 				D8F6F14F296C73770021CE3C /* FileManager.swift */,
+				D8F6F151296EC94C0021CE3C /* PasswordScreen.swift */,
+				D832C26E298AB11F0032E811 /* Settings.swift */,
 			);
 			path = MyFileManager;
 			sourceTree = "<group>";
@@ -77,6 +85,9 @@
 			dependencies = (
 			);
 			name = MyFileManager;
+			packageProductDependencies = (
+				D832C26C2989B71D0032E811 /* KeychainAccess */,
+			);
 			productName = MyFileManager;
 			productReference = D8F6F138296C73110021CE3C /* MyFileManager.app */;
 			productType = "com.apple.product-type.application";
@@ -105,6 +116,9 @@
 				Base,
 			);
 			mainGroup = D8F6F12F296C73110021CE3C;
+			packageReferences = (
+				D832C26B2989B71D0032E811 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+			);
 			productRefGroup = D8F6F139296C73110021CE3C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -133,6 +147,8 @@
 				D8F6F13C296C73110021CE3C /* AppDelegate.swift in Sources */,
 				D8F6F13E296C73110021CE3C /* SceneDelegate.swift in Sources */,
 				D8F6F150296C73770021CE3C /* FileManager.swift in Sources */,
+				D8F6F152296EC94C0021CE3C /* PasswordScreen.swift in Sources */,
+				D832C26F298AB11F0032E811 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +345,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D832C26B2989B71D0032E811 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D832C26C2989B71D0032E811 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D832C26B2989B71D0032E811 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D8F6F130296C73110021CE3C /* Project object */;
 }
