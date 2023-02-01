@@ -39,6 +39,7 @@ class FileManagerService: FileManagerServiceProtocol {
     var path: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
     
     func contentsOfDirectory() -> [Content] {
+        
         var content: [Content] = []
         let files = (try? FileManager.default.contentsOfDirectory(atPath: path)) ?? []
         for fileName in files {
@@ -47,6 +48,14 @@ class FileManagerService: FileManagerServiceProtocol {
             var isDir: ObjCBool = false
             if FileManager.default.fileExists(atPath: fullPath, isDirectory: &isDir) && isDir.boolValue == true {type = .folder}
             content.append(Content(fileName: fileName, type: type))
+        }
+        
+        let sortBy = UserDefaults.standard.string(forKey: "SortBy") ?? SortBy.alphabetically.rawValue
+        if sortBy == SortBy.alphabetically.rawValue {
+            content = content.sorted(by: {$0.fileName < $1.fileName})
+        }
+        else {
+            content = content.sorted(by: {$0.fileName > $1.fileName})
         }
         
         return content
@@ -101,6 +110,18 @@ class FileManagerViewController: UIViewController {
         addSubviews()
         setConstraints()
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.refreshTable),
+            name: NSNotification.Name(rawValue: "settingsСhanged"),
+            object: nil)
+        
+    }
+    
+    @objc func refreshTable() {
+        DispatchQueue.main.async {
+            self.tableViewFiles.reloadData()
+        }
     }
     
     private func addSubviews() {
